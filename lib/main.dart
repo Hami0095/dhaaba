@@ -1,5 +1,6 @@
 import 'package:dhaaba/screens/category_meal_page.dart';
 import 'package:dhaaba/screens/meal_detail_page.dart';
+import 'package:dhaaba/screens/tabs_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dhaaba/screens/category_page.dart';
@@ -35,10 +36,10 @@ class MyApp extends StatelessWidget {
                 ),
               ),
         ),
-        // home: const CatergoryPage(),
+        // home: const TabsPage(),
         initialRoute: '/',
         routes: {
-          '/': (context) => const CatergoryPage(),
+          '/': (context) => const TabsPage(),
           CategoryMealPage.routeName: (context) => const CategoryMealPage(),
           MealDetailPage.routeName: (context) => MealDetailPage(),
         });

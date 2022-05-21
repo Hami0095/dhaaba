@@ -8,23 +8,18 @@ class CatergoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('DHAABA'),
-      ),
-      body: GridView(
-        padding: const EdgeInsets.all(15),
-        children: DUMMY_CATEGORIES
-            .map(
-              (e) => CategoryItem(color: e.color, title: e.title, id: e.id),
-            )
-            .toList(),
-        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 200,
-          childAspectRatio: 1.5,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20,
-        ),
+    return GridView(
+      padding: const EdgeInsets.all(15),
+      children: DUMMY_CATEGORIES
+          .map(
+            (e) => CategoryItem(color: e.color, title: e.title, id: e.id),
+          )
+          .toList(),
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 200,
+        childAspectRatio: 1.5,
+        crossAxisSpacing: 20,
+        mainAxisSpacing: 20,
       ),
     );
   }
