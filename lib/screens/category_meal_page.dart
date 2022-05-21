@@ -1,6 +1,8 @@
 import 'package:dhaaba/dummy_data.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/meal_item.dart';
+
 class CategoryMealPage extends StatelessWidget {
   // final String id;
   // final String title;
@@ -23,8 +25,17 @@ class CategoryMealPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(categoryTitle!),
       ),
-      body: const Center(
-        child: Text('The recipies of the meals'),
+      body: ListView.builder(
+        itemBuilder: ((ctx, index) {
+          return MealItem(
+            title: categoryMeals[index].title,
+            affordability: categoryMeals[index].affordability,
+            complexity: categoryMeals[index].complexity,
+            duration: categoryMeals[index].duration,
+            imageUrl: categoryMeals[index].imageUrl,
+          );
+        }),
+        itemCount: categoryMeals.length,
       ),
     );
   }

@@ -1,7 +1,7 @@
-import 'package:dhaaba/category_item.dart';
+import 'package:dhaaba/widgets/category_item.dart';
 import 'package:flutter/material.dart';
 
-import 'dummy_data.dart';
+import '../dummy_data.dart';
 
 class CatergoryPage extends StatelessWidget {
   const CatergoryPage({Key? key}) : super(key: key);

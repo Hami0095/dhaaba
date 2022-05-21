@@ -1,7 +1,8 @@
-import 'package:dhaaba/category_meal_page.dart';
+import 'package:dhaaba/screens/category_meal_page.dart';
+import 'package:dhaaba/screens/meal_detail_page.dart';
 import 'package:flutter/material.dart';
 
-import 'package:dhaaba/category_page.dart';
+import 'package:dhaaba/screens/category_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,7 +39,8 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => const CatergoryPage(),
-          CategoryMealPage.routeName: (context) => const CategoryMealPage()
+          CategoryMealPage.routeName: (context) => const CategoryMealPage(),
+          MealDetailPage.routeName: (context) => const MealDetailPage(),
         });
   }
 }

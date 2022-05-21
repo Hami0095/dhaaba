@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:dhaaba/category_meal_page.dart';
+import 'package:dhaaba/screens/category_meal_page.dart';
 
 // ignore: must_be_immutable
 class CategoryItem extends StatelessWidget {
