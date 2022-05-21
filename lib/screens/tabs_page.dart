@@ -10,35 +10,49 @@ class TabsPage extends StatefulWidget {
 }
 
 class _TabsPageState extends State<TabsPage> {
+  final List<Map<String, Object>> _pages = const [
+    {'pages': CatergoryPage(), 'title': 'Categories'},
+    {'pages': FavouritesPage(), 'title': 'My Favourites'},
+  ];
+  int _selectedIndex = 0;
+  void _selectPage(int index) {
+    setState(() {
+      _selectedIndex = index;
+      print(_selectedIndex);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      initialIndex: 0,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Meals'),
-          bottom: const TabBar(
-            tabs: [
-              Tab(
-                icon: Icon(Icons.category),
-                text: 'Categories',
-              ),
-              Tab(
-                icon: Icon(Icons.star),
-                text: 'Favourites',
-              ),
-            ],
-          ),
-        ),
-        body: const TabBarView(
-          children: [
-            CatergoryPage(),
-            // TO-DO: ADD FAVOURITE SCREEN
-            FavouritesPage(),
-          ],
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.white,
+        title: Text(
+          _pages[_selectedIndex]['title'].toString(),
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _selectPage,
+        // backgroundColor: Theme.of(context).primaryColor,
+        unselectedItemColor: Color.fromARGB(255, 157, 0, 84),
+        selectedItemColor: Colors.white,
+        type: BottomNavigationBarType.shifting,
+        items: [
+          BottomNavigationBarItem(
+            backgroundColor: Theme.of(context).primaryColor,
+            icon: const Icon(Icons.category),
+            label: 'Categories',
+          ),
+          BottomNavigationBarItem(
+            backgroundColor: Theme.of(context).primaryColor,
+            icon: const Icon(Icons.star),
+            label: 'Favourites',
+          ),
+        ],
+      ),
+      body: _pages[_selectedIndex]['pages'] as Widget,
     );
   }
 }
