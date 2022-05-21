@@ -16,7 +16,7 @@ class CatergoryPage extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         children: DUMMY_CATEGORIES
             .map(
-              (e) => CategoryItem(color: e.color, title: e.title),
+              (e) => CategoryItem(color: e.color, title: e.title, id: e.id),
             )
             .toList(),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
