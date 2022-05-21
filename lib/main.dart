@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => const CatergoryPage(),
           CategoryMealPage.routeName: (context) => const CategoryMealPage(),
-          MealDetailPage.routeName: (context) => const MealDetailPage(),
+          MealDetailPage.routeName: (context) => MealDetailPage(),
         });
   }
 }
