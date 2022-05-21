@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
+          primarySwatch: Colors.pink,
           primaryColor: Colors.pink,
           canvasColor: const Color.fromRGBO(255, 254, 229, 1),
           fontFamily: 'Raleway',
@@ -33,7 +34,11 @@ class MyApp extends StatelessWidget {
                 ),
               ),
         ),
-        home: const CatergoryPage(),
-        routes: {'/category-meals': (context) => const CategoryMealPage()});
+        // home: const CatergoryPage(),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const CatergoryPage(),
+          CategoryMealPage.routeName: (context) => const CategoryMealPage()
+        });
   }
 }
