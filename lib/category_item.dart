@@ -14,21 +14,17 @@ class CategoryItem extends StatelessWidget {
     required this.color,
   }) : super(key: key);
 
-  void selectPage(BuildContext ctx) {
-    Navigator.of(ctx).push(
-      MaterialPageRoute(builder: (_) {
-        return CategoryMealPage(
-          title: title,
-          id: id,
-        );
-      }),
+  void selectCategory(BuildContext ctx) {
+    Navigator.of(ctx).pushNamed(
+      '/category-meals',
+      arguments: {'id': id, 'title': title},
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => selectPage(context),
+      onTap: () => selectCategory(context),
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(15),
       child: Container(
