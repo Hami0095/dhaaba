@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:dhaaba/models/meals.dart';
 
 class MealItem extends StatelessWidget {
+  final String id;
   final String title;
   final String imageUrl;
   final int duration;
@@ -12,6 +13,7 @@ class MealItem extends StatelessWidget {
 
   const MealItem({
     Key? key,
+    required this.id,
     required this.title,
     required this.imageUrl,
     required this.duration,
@@ -45,7 +47,7 @@ class MealItem extends StatelessWidget {
   }
 
   void selectMeal(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed(MealDetailPage.routeName);
+    Navigator.of(ctx).pushNamed(MealDetailPage.routeName, arguments: id);
   }
 
   @override
