@@ -1,26 +1,43 @@
+import 'package:flutter/material.dart';
+
 import 'package:dhaaba/screens/category_page.dart';
 import 'package:dhaaba/screens/favourites_page.dart';
 import 'package:dhaaba/widgets/main_drawer.dart';
-import 'package:flutter/material.dart';
+
+import '../models/meals.dart';
 
 class TabsPage extends StatefulWidget {
-  const TabsPage({Key? key}) : super(key: key);
+  List<Meal> favMeals;
+  TabsPage({
+    Key? key,
+    required this.favMeals,
+  }) : super(key: key);
 
   @override
   State<TabsPage> createState() => _TabsPageState();
 }
 
 class _TabsPageState extends State<TabsPage> {
-  final List<Map<String, Object>> _pages = const [
-    {'pages': CatergoryPage(), 'title': 'Categories'},
-    {'pages': FavouritesPage(), 'title': 'My Favourites'},
-  ];
+  late List<Map<String, Object>> _pages;
   int _selectedIndex = 0;
   void _selectPage(int index) {
     setState(() {
       _selectedIndex = index;
       print(_selectedIndex);
     });
+  }
+
+  @override
+  void initState() {
+    _pages = [
+      {'pages': const CatergoryPage(), 'title': 'Categories'},
+      {
+        'pages': FavouritesPage(meals: widget.favMeals),
+        'title': 'My Favourites'
+      },
+    ];
+    // TODO: implement initState
+    super.initState();
   }
 
   @override
