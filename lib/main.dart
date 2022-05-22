@@ -1,4 +1,5 @@
 import 'package:dhaaba/screens/category_meal_page.dart';
+import 'package:dhaaba/screens/filter_screen.dart';
 import 'package:dhaaba/screens/meal_detail_page.dart';
 import 'package:dhaaba/screens/tabs_page.dart';
 import 'package:flutter/material.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
           '/': (context) => const TabsPage(),
           CategoryMealPage.routeName: (context) => const CategoryMealPage(),
           MealDetailPage.routeName: (context) => MealDetailPage(),
+          FilterScreen.routeName: (context) => const FilterScreen(),
         });
   }
 }

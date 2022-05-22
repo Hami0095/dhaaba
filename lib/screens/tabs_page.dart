@@ -1,5 +1,6 @@
 import 'package:dhaaba/screens/category_page.dart';
 import 'package:dhaaba/screens/favourites_page.dart';
+import 'package:dhaaba/widgets/main_drawer.dart';
 import 'package:flutter/material.dart';
 
 class TabsPage extends StatefulWidget {
@@ -32,6 +33,7 @@ class _TabsPageState extends State<TabsPage> {
           _pages[_selectedIndex]['title'].toString(),
         ),
       ),
+      drawer: const MainDrawer(),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _selectPage,
