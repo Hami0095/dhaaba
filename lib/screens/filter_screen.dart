@@ -10,7 +10,7 @@ class FilterScreen extends StatefulWidget {
   }) : super(key: key);
   static const routeName = '/filters';
   final Function savefilters;
-  final Map<String, bool> filter;
+  final Map<String, bool?> filter;
 
   @override
   State<FilterScreen> createState() => _FilterScreenState();

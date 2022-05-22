@@ -20,7 +20,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
-  Map<String, bool> _filters = {
+  Map<String, bool?> _filters = {
     'gluten': false,
     'lactose': false,
     'vegan': false,
@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
   };
   List<Meal> availableMeals = DUMMY_MEALS;
   List<Meal> favouriteMeals = [];
-  void _setFilters(Map<String, bool> filterData) {
+  void _setFilters(Map<String, bool?> filterData) {
     setState(() {
       _filters = filterData;
       availableMeals = DUMMY_MEALS.where(
